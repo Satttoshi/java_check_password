@@ -22,7 +22,14 @@ public class Main {
         } else if (!passwordContainsNumbers(password)) {
             System.out.println("Your password does not contain numbers!");
             enterPassword();
-        } else {
+        } else if (!passwordContainsUpperCase(password)) {
+            System.out.println("Your password does not contain uppercase letters!");
+            enterPassword();
+        } else if (isBadPassword(password)) {
+            System.out.println("Your password is bad!");
+            enterPassword();
+        }
+        else {
             System.out.println("Your password is valid!");
         }
     }
