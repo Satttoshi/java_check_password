@@ -23,9 +23,9 @@ public class TestMain {
     @ParameterizedTest
     @CsvSource(
             value = {
-                    "\"myCoolPassword\", false",
-                    "\"myCoolPassword123\", true",
-                    "\"c4tf1sh\", true",
+                    "myCoolPassword, false",
+                    "myCoolPassword123, true",
+                    "c4tf1sh, true",
             }
     )
     public void testPasswordContainsNumbers(String password, boolean expected) {
@@ -36,10 +36,10 @@ public class TestMain {
     @ParameterizedTest
     @CsvSource(
             value = {
-                    "\"MyCoolPassword\", true",
-                    "\"mycoolpassword123\", false",
-                    "\"c4tf1sh\", false",
-                    "\"SCREAMITOUTLOUD\", true",
+                    "MyCoolPassword, true",
+                    "mycoolpassword123, false",
+                    "c4tf1sh, false",
+                    "SCREAMITOUTLOUD, true",
             }
     )
     public void testPasswordContainsUpperCase(String password, boolean expected) {
@@ -50,9 +50,9 @@ public class TestMain {
     @ParameterizedTest
     @CsvSource(
             value = {
-                    "\"12345\", true",
-                    "\"password\", true",
-                    "\"C4tF1sh\", false",
+                    "12345, true",
+                    "password, true",
+                    "C4tF1sh, false",
             }
     )
     public void testIsBadPassword(String password, boolean expected) {
