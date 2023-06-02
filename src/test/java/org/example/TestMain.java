@@ -53,6 +53,7 @@ public class TestMain {
                     "12345, true",
                     "password, true",
                     "C4tF1sh, false",
+                    "myCoolPassword123, true",
             }
     )
     public void testIsBadPassword(String password, boolean expected) {

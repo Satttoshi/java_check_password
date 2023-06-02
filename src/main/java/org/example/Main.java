@@ -58,7 +58,8 @@ public class Main {
     }
 
     public static boolean isBadPassword(String password) {
-        return password.equals("12345") || password.equals("password");
+        String passwordLowercase = password.toLowerCase();
+        return passwordLowercase.contains("12345") || passwordLowercase.contains("password");
     }
 
 }
