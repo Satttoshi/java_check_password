@@ -32,4 +32,31 @@ public class TestMain {
         boolean actual = Main.passwordContainsNumbers(password);
         Assertions.assertEquals(expected, actual);
     }
+
+    @ParameterizedTest
+    @CsvSource(
+            value = {
+                    "\"MyCoolPassword\", true",
+                    "\"mycoolpassword123\", false",
+                    "\"c4tf1sh\", false",
+                    "\"SCREAMITOUTLOUD\", true",
+            }
+    )
+    public void testPasswordContainsUpperCase(String password, boolean expected) {
+        boolean actual = Main.passwordContainsUpperCase(password);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @CsvSource(
+            value = {
+                    "\"12345\", true",
+                    "\"password\", true",
+                    "\"C4tF1sh\", false",
+            }
+    )
+    public void testIsBadPassword(String password, boolean expected) {
+        boolean actual = Main.isBadPassword(password);
+        Assertions.assertEquals(expected, actual);
+    }
 }
