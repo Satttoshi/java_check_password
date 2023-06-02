@@ -32,5 +32,4 @@ public class TestMain {
         boolean actual = Main.passwordContainsNumbers(password);
         Assertions.assertEquals(expected, actual);
     }
-
 }

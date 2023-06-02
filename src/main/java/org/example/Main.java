@@ -12,7 +12,21 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter your password: ");
         String password = scanner.nextLine();
-        validationResponse(password);
+        handleValidation(password);
+    }
+
+    public static void handleValidation(String password) {
+        if (!isInInputRange(password.length())) {
+            System.out.println("Your password is not in Range (4 - 20)!");
+            System.out.println("retry");
+            enterPassword();
+        } else if (!passwordContainsNumbers(password)) {
+            System.out.println("Your password does not contain numbers!");
+            System.out.println("retry");
+            enterPassword();
+        } else {
+            System.out.println("Your password is valid!");
+        }
     }
 
     public static boolean isInInputRange(int number) {
@@ -28,16 +42,5 @@ public class Main {
         }
         return false;
     }
-
-    public static void validationResponse(String password) {
-        if (!isInInputRange(password.length())) {
-            System.out.println("Your password is not in Range (4 - 20)!"); ;
-        } else if (!passwordContainsNumbers(password)) {
-            System.out.println("Your password does not contain numbers!");
-        } else {
-            System.out.println("Your password is valid!");
-        }
-    }
-
 
 }
