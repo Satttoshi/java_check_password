@@ -18,11 +18,9 @@ public class Main {
     public static void handleValidation(String password) {
         if (!isInInputRange(password.length())) {
             System.out.println("Your password is not in Range (4 - 20)!");
-            System.out.println("retry");
             enterPassword();
         } else if (!passwordContainsNumbers(password)) {
             System.out.println("Your password does not contain numbers!");
-            System.out.println("retry");
             enterPassword();
         } else {
             System.out.println("Your password is valid!");
